@@ -1,0 +1,8 @@
+*.o
+*.d
+*.a
+*.elf
+*.un~
+*.elf.map
+*.bin
+*.gitignore~
