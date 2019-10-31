@@ -105,12 +105,14 @@ int main(void)
           RCC_DeInit();
           RCC_SYSCLKConfig(RCC_SYSCLKSource_HSI);
           RCC_HSICmd(ENABLE);
+	  flag = 0;
          }
        else if (flag == 0 )
        {	 
          RCC_DeInit();  
 	 RCC_SYSCLKConfig(RCC_SYSCLKSource_HSE);
          RCC_HSEConfig(RCC_HSE_ON);
+	 flag = 1;
        }  
 
 
