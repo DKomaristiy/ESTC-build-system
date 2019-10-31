@@ -5,4 +5,7 @@
 *.un~
 *.elf.map
 *.bin
+*.c~
+*.swp
+*.swo
 *.gitignore~
