@@ -90,8 +90,45 @@ int main(void)
   
   */
 
+/*
 
+  while (1)
+  {
+    for (int pin = 0; pin <4; pin++)
+    {
+      switch(pin)
+      {
+        case 0  :
+        GPIO_ResetBits(GPIOD, GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15 );
+        delay(SWITCH_DELAY);
+        GPIO_SetBits(GPIOD, GPIO_Pin_12);
+        break;
+
+	case 1  :
+        GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_14 | GPIO_Pin_15 );
+        delay(SWITCH_DELAY);
+        GPIO_SetBits(GPIOD, GPIO_Pin_13);
+        break;
+
+	case 2  :
+        GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_15 );
+        delay(SWITCH_DELAY);
+        GPIO_SetBits(GPIOD, GPIO_Pin_14);
+        break;
+
+	case 3  :
+        GPIO_ResetBits(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 );
+        delay(SWITCH_DELAY);
+        GPIO_SetBits(GPIOD, GPIO_Pin_15);
+        break;
+
+      }
+
+    }
   
+  }
+
+  */
 
   uint32_t flag = 0;
 
