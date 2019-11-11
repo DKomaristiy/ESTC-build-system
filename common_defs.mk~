@@ -16,7 +16,7 @@ AS        := $(PREFIX)-as
 OBJCOPY   := $(PREFIX)-objcopy
 OBJDUMP   := $(PREFIX)-objdump
 GDB       := $(PREFIX)-gdb
-STFLASH   = /home/dmitriy/embedded/distribut/stlink/build/Debug/st-flash
+STFLASH   := /home/dmitriy/embedded/distribut/stlink/build/Debug/st-flash
 
 ###############################################################################
 #                             Include directories                             #
