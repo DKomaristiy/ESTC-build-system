@@ -27,8 +27,6 @@ void delay(uint32_t value)
 int main(void)
 { 
 
-
-
   GPIO_InitTypeDef GPIO_InitStructure;
 
 

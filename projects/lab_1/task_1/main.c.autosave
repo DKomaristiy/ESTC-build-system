@@ -158,3 +158,38 @@ void SetSysClockTo84(void)
   }
 }
 
+void SetSysClockTo84(void)
+{
+  int HSEStartUpStatus;	
+  RCC_DeInit();
+  /* Enable HSE */
+  RCC_HSEConfig( RCC_HSE_ON);
+  
+  
+  HSEStartUpStatus = RCC_WaitForHSEStartUp();
+
+  if (HSEStartUpStatus == SUCCESS)
+  {
+       
+     RCC_PLLConfig(RCC_PLLSource_HSE,8,336,4,4);
+          
+     RCC_PLLCmd( ENABLE);
+
+        /* Wait till PLL is ready */
+     while (RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+     {
+     }
+
+     /* Select PLL as system clock source */
+     RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK);
+
+     /* Wait till PLL is used as system clock source */
+     while (RCC_GetSYSCLKSource() != 0x08)
+     {
+     }
+
+  }
+}
+
+
+
