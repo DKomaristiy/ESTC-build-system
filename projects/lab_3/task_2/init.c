@@ -28,9 +28,9 @@ void configure_timers(void)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
 
     TIM_TimeBaseStructInit(&tim_init);
-    tim_init.TIM_Prescaler         = 8400;
+    tim_init.TIM_Prescaler         = 840;
     tim_init.TIM_CounterMode       = TIM_CounterMode_Up;
-    tim_init.TIM_Period            = (uint16_t)(10000 / PWM_FREQUENCY_HZ - 1); // if set only 10000 will turn 1 second
+    tim_init.TIM_Period            = (uint16_t)(100000 / PWM_FREQUENCY_HZ - 1); // if set only 10000 will turn 1 second
     tim_init.TIM_ClockDivision     = TIM_CKD_DIV1;
     tim_init.TIM_RepetitionCounter = 0;
     TIM_TimeBaseInit(TIM1, &tim_init);
@@ -46,7 +46,7 @@ void configure_pwm(void)
     TIM_OCStructInit(&tim_oc_init);
 
     tim_oc_init.TIM_OCMode      = TIM_OCMode_PWM1;
-    tim_oc_init.TIM_Pulse       = (uint16_t)(10000 / PWM_FREQUENCY_HZ - 1) ;
+    tim_oc_init.TIM_Pulse       = (uint16_t)(100000 / PWM_FREQUENCY_HZ - 1) ;
     tim_oc_init.TIM_OutputState = TIM_OutputState_Enable;
     tim_oc_init.TIM_OCPolarity  = TIM_OCPolarity_Low;
 
@@ -79,7 +79,7 @@ void configure_buttons_0()
    /* Set mode to input */
    GPIO_StructInit(&buttons_init_structure);
    buttons_init_structure.GPIO_Mode  = GPIO_Mode_IN;
-   buttons_init_structure.GPIO_Speed = GPIO_Speed_50MHz;
+   buttons_init_structure.GPIO_Speed = GPIO_Speed_2MHz;
    buttons_init_structure.GPIO_OType = GPIO_OType_PP;
    buttons_init_structure.GPIO_PuPd  = GPIO_PuPd_UP;
    GPIO_Init(GPIOE, &buttons_init_structure);
